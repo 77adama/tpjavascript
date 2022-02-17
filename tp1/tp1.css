@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+    position: relative;
+
+}
+button{
+  position: relative;
+    left: 90rem;
+  z-index: 1;
+  top: 19px;
+  background-color: green;
+  color: white;
+
+}
+.container{
+    flex-wrap: nowrap;
+    background-color: aqua;
+    height: 100vh;
+    width: 100%;
+    margin: 3vh, 3vh, 3vh, 3vh;
+    display: flex;
+    position: relative;
+   flex-wrap: wrap;
+   overflow-y: hidden;
+    
+    
+}
+article{
+    position: relative;
+    
+    height: 30vh;
+    width: 40vh;
+}
+.article1{
+    position: relative;
+    top: 7vh;
+    left: 2.5vh;
+    background-color: azure;
+    margin-left: 10px;
+}
+.footer{
+    position: relative;
+     bottom: 0.5vh;
+    height: 3vh;
+    background-color: green;
+}
+.ed{
+    position: relative;
+    height: 1rem;
+    bottom: 3px;
+   
+    
+}
+.but1{
+    position: relative;
+    height: 1rem;
+    left: 32vh;
+}
+.de{
+    position: relative;
+    height: 1rem;
+    bottom: 2px;
+    
+}
+.but2{
+    position: relative;
+    height: 1rem;
+    left: 33vh;
+}
+h6{
+    position: absolute;
+    left: 63rem;
+    color: azure;
+    background-color: green;
+}
+i{
+    position: relative;
+    left: 15rem;
+}
