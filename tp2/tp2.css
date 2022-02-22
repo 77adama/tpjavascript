@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+}
+div{
+    border: 0.1vw solid;
+   flex: 1;
+   height: 65vh;
+   margin: 2vw;
+   position: relative;
+}
+.elements:hover{
+    color: blue;  
+    
+}
+p{
+    position: relative;
+    left: 3vw;
+}
+.active{
+    background-color: brown;
+    width: 9vw;
+    position: relative;
+    left: 3vw;
+
+} 
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: gainsboro;
+}
+button{
+    margin: 0.5vw;
+    
+}
+table{
+    position: relative;
+    
+}
+
+.p1{
+    color: white;
+    background-color: blue;
+}

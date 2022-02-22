@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="tp3.css">
+</head>
+<body>
+    <div class="container">
+        <div class="containe">
+            <div class="password">
+                <button class="btn" id="password">
+                    <i class="far fa-clipboard">copy</i>
+                </button>
+            </div>
+    
+            <div class="length">
+              <label  for="password_length"> longuer du Password</label>
+                <input  type="number" value="15" id="password_length" min="5" max="20"/>
+            </div>
+            <div class="uppercase">
+    
+                <label for="uppercase"> contient des lettre majuscles </label>
+                <input  type="checkbox" id="uppercase"/>
+            </div >
+    
+            <div class="lowercase">
+                <label for="lowercase"> contient des Lettres Minuscles</label>
+                <input  type="checkbox" id="lowercase"/>
+            </div>
+    
+            <div class="numbers">
+                <label for="numbers"> contient des nombres</label>
+                <input  type="checkbox" id="numbers"/>
+            </div>
+    
+            <div class="symbols">
+                <label for="symbols"> contient des cracteres speciaux</label>
+                <input  type="checkbox" id="symbols"/>
+            </div>
+    
+            <div class="generatemdp">
+                <button  id="generate_mdp"  >Genere le Mot de Passe</button>
+            </div>
+        </div>
+    </div>
+    <script src="tp3.js"></script>
+</body>
+</html>
+

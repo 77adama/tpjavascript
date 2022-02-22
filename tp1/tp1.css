@@ -45,7 +45,7 @@ article{
     background-color: azure;
     margin-left: 10px;
 }
-.footer{
+.header{
     position: relative;
      bottom: 0.5vh;
     height: 3vh;
@@ -69,18 +69,10 @@ article{
     bottom: 2px;
     
 }
-.but2{
-    position: relative;
-    height: 1rem;
-    left: 33vh;
-}
-h6{
-    position: absolute;
-    left: 63rem;
-    color: azure;
-    background-color: green;
-}
 i{
     position: relative;
     left: 15rem;
+}
+textarea{
+    border: none;
 }
