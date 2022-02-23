@@ -107,10 +107,53 @@ function generatePassword(){
     
 }
 
-    
-    
     */
+const uppercasee =document.getElementById('uppercase')
+const lowercasee =document.getElementById('lowercase')
+const numberss =document.getElementById('numbers')
+const symbolss =document.getElementById('symbols')
 
+const randomFunction={
+    lower: lowerChecked,
+    upper: upperChecked,
+    number:numberChecked,
+    Symbol:symbolsChecked
+}
+generate.addEventListener('click',() =>{
+    const length= +lengthh.value
+    const isLower=lowercasee.checked
+    const isUpper=uppercasee.checked
+    const isNumber=numberss.checked
+    const isSymbol=symbolss.checked
+
+    resultt.innerText = generatePassword(
+        isLower,
+        isUpper,
+        isNumber,
+        isSymbol,
+        length
+    )
+})
+
+function generatePassword(lower, upper, number,symbol,length){
+    let generatePassword=''
+
+    const typesCount = lower + upper + number + symbol
+    const typesArr=[{lower},{upper},{number},{symbol}].filter(item=>Object.values(item)[0])
+
+    if(typesCount===0){
+        return ''
+    }
+    for (let i = 0; i < length; i+=typesCount) {
+        typesArr.forEach(type=>{
+            const funcName=Object.keys(type)[0]
+            console.log('funcName: ', funcName)
+
+            generatePassword+=randomFunction[funcName]()
+        })
+        
+    }
+}
 
 function lowerChecked(){
     let low = String.fromCharCode(Math.floor(Math.random()*26)+97);
@@ -134,4 +177,4 @@ function symbolsChecked(){
     console.log(sym);
     return 
 }
-symbolsChecked();
+symbolsChecked();  
