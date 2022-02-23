@@ -5,6 +5,12 @@
 }
 body{
     display: flex;
+    background-image: url(gradient.jpg);
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 div{
     border: 0.1vw solid;
@@ -12,21 +18,28 @@ div{
    height: 65vh;
    margin: 2vw;
    position: relative;
-}
-.elements:hover{
-    color: blue;  
-    
+   background-color: #e7d9ea;
+   border-radius: 2rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   justify-content: space-around;
+
 }
 p{
-    position: relative;
-    left: 3vw;
+    font-style: italic;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    font-size: larger;   
+    
 }
 .active{
-    background-color: brown;
-    width: 9vw;
+    background-color: #1700ff;
+    width: 14vw;
     position: relative;
-    left: 3vw;
-
+    left: 1vw;
+    color: white;
 } 
 .button{
     display: flex;
@@ -34,17 +47,16 @@ p{
     justify-content: center;
     flex-direction: column;
     background-color: gainsboro;
+    font-family: 3rem;  
+    
 }
 button{
     margin: 0.5vw;
-    
+    font-size: larger;
+    background-color: #ef4f4f;
+    width: 60px;
+    border-radius: 1rem;    
 }
-table{
-    position: relative;
-    
-}
-
-.p1{
-    color: white;
-    background-color: blue;
+button:hover{
+    background-color: green;
 }

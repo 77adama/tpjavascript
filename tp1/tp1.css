@@ -8,7 +8,6 @@ body{
     width: 100%;
     overflow-y: hidden;
     position: relative;
-
 }
 button{
   position: relative;
@@ -17,7 +16,6 @@ button{
   top: 19px;
   background-color: green;
   color: white;
-
 }
 .container{
     flex-wrap: nowrap;
@@ -28,15 +26,12 @@ button{
     display: flex;
     position: relative;
    flex-wrap: wrap;
-   overflow-y: hidden;
-    
-    
+   overflow-y: hidden;  
 }
 article{
     position: relative;
-    
     height: 30vh;
-    width: 40vh;
+    width: 41vh;
 }
 .article1{
     position: relative;
@@ -47,16 +42,14 @@ article{
 }
 .header{
     position: relative;
-     bottom: 0.5vh;
+     bottom: 0vh;
     height: 3vh;
     background-color: green;
 }
 .ed{
     position: relative;
     height: 1rem;
-    bottom: 3px;
-   
-    
+    bottom: 3px;  
 }
 .but1{
     position: relative;
@@ -66,13 +59,12 @@ article{
 .de{
     position: relative;
     height: 1rem;
-    bottom: 2px;
-    
+    bottom: 2px;  
 }
 i{
     position: relative;
-    left: 15rem;
+    left: 13.6rem;
 }
 textarea{
-    border: none;
+    border: solid azure;
 }

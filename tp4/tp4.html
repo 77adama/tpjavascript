@@ -7,11 +7,34 @@
     <title>Document</title>
     <link rel="stylesheet" href="tp4.css">
 </head>
-<body bgcolor="#CFCEBC">
-    <h2 id="test_status"></h2>
-    <fieldset id="test">
-        <legend></legend>
-    </fieldset>
-    <script src="tp4.js" ></script>
+<body>
+    <div class="quiz-container" id="quiz">
+        <div class="quiz-header">
+            <h2 id="question"></h2>
+            <ul>
+                <li>
+                    <input type="radio" name="answer" id="a" class="answer">
+                    <label for="a" id="a_text">answer</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="b" class="answer">
+                    <label for="b" id="b_text">answer</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="c" class="answer">
+                    <label for="c" id="c_text">answer</label>
+                </li>
+
+                <li>
+                    <input type="radio" name="answer" id="d" class="answer">
+                    <label for="d" id="d_text">answer</label>
+                </li>
+            </ul>
+        </div>
+        <button id="submit">Suivant</button>
+    </div>
+    <script src="tp4.js"></script>
 </body>
 </html>

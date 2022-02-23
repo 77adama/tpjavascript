@@ -1,54 +1,92 @@
-var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, correct=0;
-var quetion = [
-    ["qui est  le scientifique qui a introduit plusieurs idée sur la selection naturelle ?"] , "Richard", "Darwin", "Da vinci", "B",
-    ["qui est le president des Etats Unis ?"], "Oboma", "Sadam", "Trump", "C" ,
-    ["qui est le roi du Maroc ?"], "Mouhamed 6", "Hassan2", "Hassan3", "A",
-    ["Marakech est une ville ?"], "marocaine", "francaise", "tunisienne", "A"
-    ["L'homme est un animal:"], "hebivor", "omnivore", "carnivore", "B",
-    
+const quizData=[
+    {
+        question: "Quel est le meuilleur langage de programation en 2022 ?",
+        a:"Java",
+        b:"C",
+        c:"Python",
+        d:"Javascript",
+        correct : "d",
+    },
+    { 
+        question: "que signifie css?",
+        a:"central style Sheets",
+        b:"cascading style Sheets",
+        c:"cascading simple Sheets",
+        d:"cars sUVs Sailboats",
+        correct : "b",
+    },
+    { 
+        question: "que signifie html?",
+        a:"Hypertext Markup Language",
+        b:"Hypertext Markdown Language",
+        c:"hyperloop Machine Language",
+        d:"Helicopters Terminals Motorboats Lamborginis",
+        correct : "a",
+    },
+    { 
+        question: "en quelle année Javascript a été lancé ?",
+        a:"1996",
+        b:"1995",
+        c:"1994",
+        d:"Aucune de ces réponses",
+        correct : "b",
+    }
 ]
-function _(x){
-    return document.getElementById(x)
-   
-}
-function renderQuestion(){
-    test = _("test");
-    if(pos >= question){
 
-        test.innerHTML = "<h2>Tu as"+correct+"question correct par"+question.length+"quetions </h2>";
-        _("test_status").innerHTML="Fin de Quizz";
-        pos = 0
-        correct = 0
-        return false
-        
-       
-    }
-    _("test_status").innerHTML= "question"+(pos+1) +question;
-    
-    chA = quetion[pos][1]
-    chB = quetion[pos][2]
-    chC = quetion[pos][3]
-    test.innerHTML =  "<h3>"+quetion+"</h3>"
-    test.innerHTML += "<input type:'radio' name:'choice' value='A'>"+chA+"<br>";
-    test.innerHTML += "<input type:'radio' name:'choice' value='B'>"+chB+"<br>";
-    test.innerHTML += "<input type:'radio' name:'choice' value='C'>"+chC+"<br>";
-    test.innerHTML += "<button onclick='checkAnswer()'> Suivant !</button>";
-}
-function checkAnswer(){
-    choices = document.getElementsByName("choices")
-    
+const quiz=document.getElementById('quiz')
+const answerEls=document.querySelectorAll('.answer')
+const questionEl = document.getElementById('question')
+const a_text = document.getElementById('a_text')
+const b_text = document.getElementById('b_text')
+const c_text = document.getElementById('c_text')
+const d_text = document.getElementById('d_text')
+const submitBtn = document.getElementById('submit')
 
-    for (let i = 0; i < choices.length; i++) {
-        if (choices[i].checked) {
-            choice = choices[i].value;
-        }   
-    }
-    if (choice==question[pos][4]) {
-        correct++
-        
+let currentQuiz = 0
+let score = 0
 
-    }
-    pos++
-    renderQuestion()
+loadQuiz()
+
+function loadQuiz(){
+    deselectAnswers()
+
+    const currentQuizData = quizData[currentQuiz]
+
+    questionEl.innerHTML= currentQuizData.question
+    a_text.innerHTML = currentQuizData.a
+    b_text.innerHTML = currentQuizData.b
+    c_text.innerHTML = currentQuizData.c
+    d_text.innerHTML = currentQuizData.d
 }
-window.addEventListener("load", renderQuestion, false)
+function deselectAnswers() {
+    answerEls.forEach(answerEl => answerEl.checked = false)
+}
+function getSelected() {
+    let answer
+    answerEls.forEach(answerEl =>{
+        if (answerEl.checked) {
+            answer = answerEl.id
+        }
+    })
+    return answer
+}
+
+submitBtn.addEventListener('click', () =>{
+        const answer = getSelected()
+        if(answer) {
+            if(answer===quizData[currentQuiz].correct){
+                score++
+            }
+            currentQuiz++
+
+            if(currentQuiz<quizData.length){
+                loadQuiz()
+            }else{
+                quiz.innerHTML =` 
+                 <h2> vous avez trouver ${score}/${quizData.length} questions </h2>
+
+                 <button onclick="location.reload()">Rejouer</button>
+                `
+            }
+        }
+})
