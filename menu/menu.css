@@ -11,8 +11,13 @@ body{
     align-items: center;
     justify-content: space-around;
 }
-ul{
-    list-style-type: none;
-    display: flex;
-   
+a{
+    border: 2px solid;
+  
+}
+div{
+    background-color: rgb(163, 165, 42);
+    border: 2px solid;
+    height: 20vh;
+    width: 15vw;
 }

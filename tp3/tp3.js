@@ -49,12 +49,15 @@ function generatePassword(lower, upper, number, symbol, length){
     const typesCount = lower + upper + number + symbol
 //le filtre est utilisé pour filtrer un tableau, puis renvoyer cette valeur pour ne pas renvoyer une valeur spécifique.
     const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item=>Object.values(item)[0])
+    if (length<5 | length>20) {
+        return 'taille du mot de passe est min:5 et max: 20'
+    }
 // N'a pas de type sélectionné
     if(typesCount===0) {
         return ''
     }
     // crée une boucle
-        for (let i = 0; i < length; i+=typesCount) {
+        for (let i = 5; i < 20; i+=typesCount) {
             typesArr.forEach(type =>{
                 const funcName = Object.keys(type)[0]
                 generatePassword+= randomFunc[funcName]()

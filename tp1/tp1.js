@@ -18,7 +18,7 @@ function ajouter() {
                 <i class="fa fa-edit ecri" onclick='ecrit(${i})'  style="font-size:20px;color:azure"></i>
                   <i class="fa fa-trash-o delet" onclick='sup(${i})' style="font-size:20px;color:azure"></i> 
             </div>
-            <textarea name="text" id="text_${i}" cols="31" rows="13"></textarea>
+            <textarea name="text" id="text_${i}" cols="30" rows="10"></textarea>
     `
     container.appendChild(article1)
     const de = document.querySelector('.delet')
